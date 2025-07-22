@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 2: Intermediate HTML, CSS, and JavaScript</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-brand">
+                <h1>Task 2: Intermediate Web Dev</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#contact-form">Contact Form</a></li>
+                <li><a href="#responsive-layout">Responsive Layout</a></li>
+                <li><a href="#todo-app">To-Do App</a></li>
+                <li><a href="#image-gallery">Image Gallery</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Contact Form Section -->
+        <section id="contact-form" class="section">
+            <div class="container">
+                <h2>Contact Form with Validation</h2>
+                <p>This form demonstrates HTML form elements with JavaScript validation.</p>
+                
+                <form id="contactForm" class="contact-form" novalidate>
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" required>
+                        <span class="error-message" id="name-error"></span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required>
+                        <span class="error-message" id="email-error"></span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone">
+                        <span class="error-message" id="phone-error"></span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject">Subject *</label>
+                        <select id="subject" name="subject" required>
+                            <option value="">Select a subject</option>
+                            <option value="general">General Inquiry</option>
+                            <option value="support">Technical Support</option>
+                            <option value="feedback">Feedback</option>
+                            <option value="other">Other</option>
+                        </select>
+                        <span class="error-message" id="subject-error"></span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                        <span class="error-message" id="message-error"></span>
+                    </div>
+                    
+                    <div class="form-group checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="newsletter" name="newsletter">
+                            <span class="checkmark"></span>
+                            Subscribe to our newsletter
+                        </label>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+                
+                <div id="form-success" class="success-message hidden">
+                    <h3>Thank you!</h3>
+                    <p>Your message has been sent successfully. We'll get back to you soon!</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Responsive Layout Section -->
+        <section id="responsive-layout" class="section">
+            <div class="container">
+                <h2>Responsive Layout with Flexbox and CSS Grid</h2>
+                <p>This section demonstrates responsive design using modern CSS layout techniques.</p>
+                
+                <!-- Flexbox Layout -->
+                <div class="layout-demo">
+                    <h3>Flexbox Layout</h3>
+                    <div class="flex-container">
+                        <div class="flex-item">
+                            <h4>Feature 1</h4>
+                            <p>Responsive design ensures your website looks great on all devices.</p>
+                        </div>
+                        <div class="flex-item">
+                            <h4>Feature 2</h4>
+                            <p>Flexbox provides flexible and efficient layout options.</p>
+                        </div>
+                        <div class="flex-item">
+                            <h4>Feature 3</h4>
+                            <p>CSS Grid offers powerful two-dimensional layout capabilities.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- CSS Grid Layout -->
+                <div class="layout-demo">
+                    <h3>CSS Grid Layout</h3>
+                    <div class="grid-container">
+                        <div class="grid-item grid-header">Header</div>
+                        <div class="grid-item grid-sidebar">Sidebar</div>
+                        <div class="grid-item grid-main">Main Content</div>
+                        <div class="grid-item grid-aside">Aside</div>
+                        <div class="grid-item grid-footer">Footer</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- To-Do App Section -->
+        <section id="todo-app" class="section">
+            <div class="container">
+                <h2>Dynamic To-Do List Application</h2>
+                <p>This interactive to-do list demonstrates DOM manipulation with JavaScript.</p>
+                
+                <div class="todo-container">
+                    <div class="todo-input-section">
+                        <input type="text" id="todo-input" placeholder="Enter a new task..." maxlength="100">
+                        <button id="add-todo-btn" class="btn btn-primary">Add Task</button>
+                    </div>
+                    
+                    <div class="todo-stats">
+                        <span id="total-tasks">Total: 0</span>
+                        <span id="completed-tasks">Completed: 0</span>
+                        <span id="pending-tasks">Pending: 0</span>
+                    </div>
+                    
+                    <div class="todo-filters">
+                        <button class="filter-btn active" data-filter="all">All</button>
+                        <button class="filter-btn" data-filter="pending">Pending</button>
+                        <button class="filter-btn" data-filter="completed">Completed</button>
+                    </div>
+                    
+                    <ul id="todo-list" class="todo-list">
+                        <!-- Dynamic content will be added here -->
+                    </ul>
+                    
+                    <div class="todo-actions">
+                        <button id="clear-completed-btn" class="btn btn-secondary">Clear Completed</button>
+                        <button id="clear-all-btn" class="btn btn-danger">Clear All</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Image Gallery Section -->
+        <section id="image-gallery" class="section">
+            <div class="container">
+                <h2>Dynamic Image Gallery</h2>
+                <p>This gallery demonstrates dynamic content creation and image handling.</p>
+                
+                <div class="gallery-controls">
+                    <button id="add-image-btn" class="btn btn-primary">Add Sample Images</button>
+                    <button id="clear-gallery-btn" class="btn btn-secondary">Clear Gallery</button>
+                </div>
+                
+                <div id="image-gallery-container" class="image-gallery">
+                    <!-- Dynamic images will be added here -->
+                </div>
+                
+                <!-- Modal for image preview -->
+                <div id="image-modal" class="modal hidden">
+                    <div class="modal-content">
+                        <span class="close-modal">&times;</span>
+                        <img id="modal-image" src="" alt="">
+                        <div class="modal-info">
+                            <h3 id="modal-title"></h3>
+                            <p id="modal-description"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Task 2 - Intermediate HTML, CSS, and JavaScript. Created for learning purposes.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
